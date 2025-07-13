@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mikrotik-vpn-bot:
+    build: .
+    container_name: mikrotik-vpn-bot
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./templates:/app/templates
+      - ./config.json:/app/config.json
+    environment:
+      - TZ=Europe/Kyiv
+    networks:
+      - mikrotik-bot-network
+
+networks:
+  mikrotik-bot-network:
+    driver: bridge
