@@ -28,6 +28,7 @@ bashcp config.json.example config.json
 Запустите через Docker Compose:
 
 bashdocker-compose up -d
+```
 Ручная установка
 
 Установите зависимости:
